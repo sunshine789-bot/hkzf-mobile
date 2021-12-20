@@ -1,13 +1,28 @@
-body {
+html,body{
+  background-color: #fff;
+  color:#ccc;
+  font-family:'MicroSoft YaHei';
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+*{
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  .adm-tab-bar-item-active {
+    color: #21b97a !important;
+  }
+  .adm-tab-bar-item {
+    flex: 1 1;
+    color: var(--adm-color-weak);
+    white-space: nowrap;
+    padding: 5px 32px !important;
+    width: min-content;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
