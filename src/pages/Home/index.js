@@ -13,11 +13,12 @@ import {
   UnorderedListOutline,
   UserOutline,
 } from "antd-mobile-icons";
-import styles from "./demo2.less";
+import "./style.less";
 import HouseList from "../HouseList";
 import Profile from "../Profile";
 import Index from "../Index";
 import News from "../News";
+import CityList from "../CityList";
 const Bottom = () => {
   const history = useHistory();
   const location = useLocation();
@@ -48,7 +49,7 @@ const Bottom = () => {
     },
   ];
   return (
-    <div className="tabs" style={{ position: "fixed", bottom: 0 }}>
+    <div className="tabs" style={{ position: "fixed", bottom: 10 }}>
       <TabBar activeKey={pathname} onChange={(value) => setRouteActive(value)}>
         {tabs.map((item) => (
           <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
@@ -60,29 +61,19 @@ const Bottom = () => {
 export default class Home extends React.Component {
   render() {
     return (
-      <div className={styles.app}>
-        <div className={styles.body}>
-          <Switch>
-            <Route exact path="/home">
-              <Index />
-            </Route>
-            <Route  path="/home/list">
-              <HouseList />
-            </Route>
-            <Route  path="/home/news">
-              <News />
-            </Route>
-            <Route  path="/home/profile">
-              <Profile />
-            </Route>
-          </Switch>
+      <div className="app">
+        <div className="body">
+          {/* 嵌套路由，需要带上父路由/home */}
+            <Route exact path="/home" component={Index} />
+            <Route path="/home/list" component={HouseList} />
+            <Route path="/home/news" component={News} />
+            <Route path="/home/profile" component={Profile} />
+            <Route path="/home/cityList" component={CityList} />
         </div>
-        <div className={styles.bottom}>
+        <div className="bottom" style={{ paddingBottom: 60 }}>
           <Bottom />
         </div>
       </div>
     );
   }
 }
-
-

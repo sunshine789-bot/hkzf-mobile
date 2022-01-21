@@ -1,28 +1,14 @@
 html,body{
-  background-color: #fff;
+  background-color:  #fff;
   color:#ccc;
   font-family:'MicroSoft YaHei';
-  height: 100%;
   margin: 0;
   padding: 0;
 }
 *{
   box-sizing: border-box;
 }
-
-  .adm-tab-bar-item-active {
-    color: #21b97a !important;
-  }
-  .adm-tab-bar-item {
-    flex: 1 1;
-    color: var(--adm-color-weak);
-    white-space: nowrap;
-    padding: 5px 32px !important;
-    width: min-content;
-    position: relative;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+/* 地图占满整个屏幕 */
+html, body,#root,.App{
+  height: 100%;
+}
