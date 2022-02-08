@@ -4,6 +4,7 @@ import { LocationFill, DownFill, SearchOutline } from "antd-mobile-icons";
 import { SwiperRef } from "antd-mobile/es/components/swiper";
 import "./style.less";
 import axios from "axios";
+import { getCurrentCity } from '../../utils/index'
 
 const colors = ["#ace0ff", "#bcffbd", "#e4fabd", "#ffcfac"];
 const items = colors.map((color, index) => (
@@ -198,18 +199,15 @@ class Index extends React.Component {
 //     map.setCenter(cityName);
 //     alert("当前定位城市:" + cityName);
 // }
-  componentDidMount() {
+  async componentDidMount() {
     // this.getSwiperData();
     // this.getGroups();
     // this.getNews()
     // this.getLocation();
-    const curCity = new window.BMapGL.LocalCity()
-    curCity.get(async res=>{
-      console.log(res)
-      const ret = await axios.get(`http://localhost:8080/area/info?name=${res.name}`)
-      this.setState({
-        curCity: ret.data.body.label,
-      })
+   const curCity = await  getCurrentCity()
+   console.log(curCity,0)
+    this.setState({
+      curCity: curCity.label,
     })
   }
   render() {

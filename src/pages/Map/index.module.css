@@ -1,0 +1,32 @@
+.test{
+    color: red;
+    font-size:30px;
+}
+.map{
+    height: 100%;
+    overflow: hidden;
+    padding-top:45px;
+}
+ .container{
+    height: 100%;
+}
+.map :global(.adm-nav-bar){
+    margin-top:-45px;
+}
+.bubble{
+  width: 70px;
+  height: 70px;
+  border-radius:100%;
+  color: #fff;
+  background-color:rgb(12,181,106,0.9);
+  position: absolute;
+  /* 允许在元素上设置宽度和高度，行内元素 */
+  display: inline-block;
+  line-height:1;
+  border:2px solid rgb(255,255,255,0.8);
+  text-align:center;
+  cursor:pointer;
+}
+.name{
+ padding: 18px 0 6px 0;
+}

@@ -12,3 +12,9 @@ html,body{
 html, body,#root,.App{
   height: 100%;
 }
+h2,h3,ul,p{
+  margin:0;
+}
+ul{
+  list-style: none;
+}

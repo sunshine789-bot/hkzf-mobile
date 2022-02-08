@@ -1,5 +1,52 @@
-.cityList{
-    .navBar{
-background-color: #f6f5f6;
+.cityList {
+  height: 100%;//List组件撑起整个页面的高度，然后AutoSizer才能撑起来
+  //（顶部导航栏的高度）空出导航栏的高度后，就是城市列表的高度，否则，
+  //AutoSizer的高度也是100%，就会出现全局滚动问题
+  padding-top: 45px; 
+  overflow: hidden; //溢出隐藏
+  .navBar {
+    margin-top: -45px; //让顶部导航栏再回到原位置
+    // background-color: #f6f5f6;
+  }
+  .city {
+    .title {
+      font-size: 14px;
+      padding: 10px 15px;
+      color: #999;
     }
+    .name {
+      width: 100%;
+      height: 50px;
+      padding: 0 15px;
+      line-height: 50px;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 16px;
+      color: #333;
+      background-color: #fff;
+      cursor: pointer;
+    }
+  }
+  .city-index {
+      position: absolute;
+      right:5px;
+      display: flex;
+      flex-direction: column;
+      height: 90%;
+      box-sizing: border-box;//border和padding数值包含在width和height之内，这样的好处就是修改border和padding数值盒子的大小不变。
+      padding-top: 20px;
+      text-align: center;
+    .city-index-item {
+        flex: 1;
+      .index-active {
+          color:#fff;
+          background-color:#21b97a;
+          border-radius:100%;
+          font-size: 12px;
+          width: 15px;
+          height: 15px;
+          line-height: 15px;
+          display: inline-block;
+      }
+    }
+  }
 }
